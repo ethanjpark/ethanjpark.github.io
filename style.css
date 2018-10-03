@@ -1,3 +1,8 @@
 body {
     background-color: rgb(122, 122, 122);
 }
+.fsgp {
+	float: right;
+	width: 300px;
+	height: 300px;
+}
