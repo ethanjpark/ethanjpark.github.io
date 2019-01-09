@@ -58,7 +58,8 @@ body {
 
 .proj {
 	margin: 150px auto auto auto;
-	width: 6%;
+	width: 7%;
+	font-size: 36px
 }
 
 .pong {
@@ -66,17 +67,16 @@ body {
 	width: 300px;
 	height: 300px;
 	margin-top: 50px;
-	margin-left: -94px;
+	margin-left: -75px;
 }
 
-.ponglink {
+.pongthumb {
   display: block;
   width: 300px;
-  height: auto;
   border-radius: 20%;
 }
 
-.ponglinktext {
+.pongthumbtext {
 	position: absolute;
 	top: 40%;
 	left: 14%;
@@ -85,10 +85,10 @@ body {
 	opacity: 0;
 }
 
-.pong:hover .ponglink {
-  opacity: 0.5;
+.pong:hover .pongthumb {
+  opacity: 0.3;
 }
 
-.pong:hover .ponglinktext {
+.pong:hover .pongthumbtext {
   opacity: 1;
 }
