@@ -1,6 +1,10 @@
 body {
     background-color: rgba(50,50,50);
     width: 1912px;
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	letter-spacing: 3px;
+	color: white;
 }
 
 .heading {
@@ -15,10 +19,6 @@ body {
 
 .basics {
 	margin-top: 25px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 24px;
-	color: #ffffff;
-	letter-spacing: 3px;
 	line-height: 40px;
 	float: right;
 }
@@ -54,4 +54,41 @@ body {
 }
 .resume:hover {
 	background-color: #005580;
+}
+
+.proj {
+	margin: 150px auto auto auto;
+	width: 6%;
+}
+
+.pong {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	margin-top: 50px;
+	margin-left: -94px;
+}
+
+.ponglink {
+  display: block;
+  width: 300px;
+  height: auto;
+  border-radius: 20%;
+}
+
+.ponglinktext {
+	position: absolute;
+	top: 40%;
+	left: 14%;
+	color: white;
+	font-size: 32px;
+	opacity: 0;
+}
+
+.pong:hover .ponglink {
+  opacity: 0.5;
+}
+
+.pong:hover .ponglinktext {
+  opacity: 1;
 }
