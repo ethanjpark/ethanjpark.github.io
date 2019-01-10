@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Ethan Park</title>
+  	<link rel="stylesheet" href="../css/tank.css">
+  	<link rel="icon" type="image/png" href="../links/favicon.png">
+  </head>
+  <body>
+  	<button onclick="window.location.href = 'https://ethanjpark.github.io';" class="home">Home</button>
+  	<div class="header">
+  	  RC Tank<br>
+  	  <div class="quarter">
+  	  	Summer 2013
+  	  </div>
+  	</div>
+
+    <div class="first">
+      <img src="../links/tankfull.jpg" class="tank">
+      <div class="text1">
+        I found this beauty while digging through some old files, it's an RC tank that I made from scratch during my internship at ROBOTIS, in Seoul. It's probably hard to tell, but I used the M4 Sherman as inspiration.
+        <br><br><br><br>
+        Below and on the left is the ROBOTIS CM9, the microcontroller that I used. On the right is a mid-construction photo of the chassis. I later did away with the side skirts for ease of access to the internals.
+      </div>
+    </div>
+
+    <img src="../links/CM9.jpg" class="microcontroller">
+    <img src="../links/tankchassis.jpg" class="chassis">
+
+    <div class="text2">
+      The tank itself is made from a smattering of spare parts and pieces from ROBOTIS' line of hobbyist kits and toys. Locomotion is through two Dynamixel actuators (Probably AX-12As, which I used for the <a href="./rccar.html" style="color: #00ccff">RC car</a>), one for each tread. Each tread could be actuated independently. I also used one for turret rotation (in place beneath the gray wheel piece, or the turret ring as I liked to imagine it), and another inside the turret to elevate and depress the 'cannon'.
+      <br><br>
+      Code for the CM9 was written in C/C++ in a proprietary IDE, similar to for an Arduino. Using a bluetooth dongle and an Android app, I could control the tank with keyboard presses from my phone. Below are some videos for your entertainment, in glorious 360p straight from 2013.
+    </div>
+
+  	<div class="video1">
+  	  <iframe width="960" height="540"
+  	  src="https://www.youtube.com/embed/VJe1GAUpqXg"
+      style="border:3px solid #00ccff;">
+  	  </iframe>
+  	</div>
+
+    <div class="video2">
+      <iframe width="960" height="540"
+      src="https://www.youtube.com/embed/Px2FCqCw0YY"
+      style="border:3px solid #00ccff;">
+      </iframe>
+    </div>
+
+  </body>
+</html>

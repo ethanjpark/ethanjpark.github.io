@@ -59,8 +59,8 @@ body {
 
 .proj {
 	margin: 150px auto auto auto;
-	width: 7%;
-	font-size: 36px
+	width: 6.5%;
+	font-size: 36px;
 }
 
 .pong {
@@ -68,7 +68,7 @@ body {
 	width: 300px;
 	height: 300px;
 	margin-top: 50px;
-	margin-left: -75px;
+	margin-left: -500px;
 }
 
 .pongthumb {
@@ -80,7 +80,7 @@ body {
 .pongthumbtext {
 	position: absolute;
 	top: 40%;
-	left: 14%;
+	left: 12%;
 	color: white;
 	font-size: 32px;
 	opacity: 0;
@@ -91,5 +91,67 @@ body {
 }
 
 .pong:hover .pongthumbtext {
+  opacity: 1;
+}
+
+.tank {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	margin-top: 50px;
+	margin-left: -75px;
+}
+
+.tankthumb {
+  display: block;
+  width: 300px;
+  border-radius: 20%;
+}
+
+.tankthumbtext {
+	position: absolute;
+	top: 40%;
+	left: 26%;
+	color: white;
+	font-size: 32px;
+	opacity: 0;
+}
+
+.tank:hover .tankthumb {
+  opacity: 0.3;
+}
+
+.tank:hover .tankthumbtext {
+  opacity: 1;
+}
+
+.rccar {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	margin-top: 50px;
+	margin-left: 350px;
+}
+
+.rccarthumb {
+  display: block;
+  width: 300px;
+  border-radius: 20%;
+}
+
+.rccarthumbtext {
+	position: absolute;
+	top: 40%;
+	left: 19%;
+	color: white;
+	font-size: 32px;
+	opacity: 0;
+}
+
+.rccar:hover .rccarthumb {
+  opacity: 0.3;
+}
+
+.rccar:hover .rccarthumbtext {
   opacity: 1;
 }

@@ -1,0 +1,90 @@
+body {
+    background-color: rgba(50,50,50);
+    width: 1894px;
+    font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: 3px;
+	color: white;
+	padding-bottom: 100px;
+}
+
+.home {
+	position: sticky;
+	top: 20px;
+	margin-left: 15px;
+	background-color: #00ccff;
+	border: none;
+	color: white;
+	padding: 10px 32px;
+	text-align: center;
+	font-size: 24px;
+	border-radius: 10px;
+	transition-duration: 0.2s;
+	border: 3px solid #00ccff;
+}
+
+.home:hover {
+	background-color: #005580;
+}
+
+.header {
+	margin: 50px auto auto 843px;
+	width: 208px;
+	font-size: 48px;
+	/*background-color: #000000;*/
+}
+
+.quarter {
+	margin: 15px auto auto 10px;
+	width: 184px;
+	font-size: 24px;
+	/*background-color: #000000;*/
+}
+
+.first {
+	width: 1594px;
+	height: 400px;
+	margin: 75px auto auto 150px;
+}
+
+.tank {
+	width: 600px;
+	border: solid 3px #00ccff;
+}
+
+.text1 {
+	width: 900px;
+	margin-top: 75px;
+	float: right;
+	font-size: 18px;
+	line-height: 30px;
+}
+
+.microcontroller {
+	width: 640px;
+	margin-top: 75px;
+	margin-left: 200px;
+	border: solid 3px #00ccff;
+}
+
+.chassis {
+	width: 640px;
+	margin-top: 75px;
+	margin-left: 200px;
+	border: solid 3px #00ccff;
+}
+
+.text2 {
+	width: 1400px;
+	margin-top: 75px;
+	margin-left: 247px;
+	font-size: 18px;
+	line-height: 30px;
+}
+
+.video1 {
+	margin: 50px auto auto 473px;
+}
+
+.video2 {
+	margin: 50px auto auto 473px;
+}
