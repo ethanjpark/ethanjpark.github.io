@@ -6,16 +6,42 @@
   	<link rel="icon" type="image/png" href="../links/favicon.png">
   </head>
   <body>
+  	<button onclick="window.location.href = 'https://ethanjpark.github.io';" class="home">Home</button>
   	<div class="header">
-  	  Sawyer Pong
+  	  Sawyer Pong<br>
+  	  <div class="quarter">
+  	  	Fall 2018
+  	  </div>
   	</div>
-  	<!-- <div class="testbox">
-  	</div> -->
+
   	<div class="video">
   	  <iframe width="960" height="540"
   	  src="https://www.youtube.com/embed/Yhj0CFRZlCQ"
   	  style="border:3px solid #00ccff;">
   	  </iframe>
   	</div>
+
+  	<div class="group">
+      <i>Group members: Evan Li, Victor Ozoh, Ethan Park, Petras Swissler, Andrew Thompson</i>
+  	</div>
+
+  	<div class="text">
+  	  This was my group's final project for ME 495: Embedded Systems in Robotics. From a starting position, the ball would start with a random velocity and two users would play Pong by using their hands to control the paddles. We used two ultrasonic distance sensors to determine paddle locations using the distance of the hand from the sensors. Lastly, we used Rethink Robotics' Sawyer robot arm to represent the real-time location and movement of the ball. Except for the Arduino sketch (C/C++), all code is in Python.
+  	  <br><br>
+  	  The ROS package is divided into three nodes:
+  	  <br>
+  	  <ul>
+  	  	<li><span style="color: #00ccff">armcontrol</span> - calculates the joint velocities of the arm using the twist and space Jacobian and uses the Sawyer API to set its joint velocities and retrieve end effector position, which is published.</li>
+  	  	<br>
+  	  	<li><span style="color: #00ccff">pong_master</span> - contains the game logic, such as boundary checking and paddle reflection, and publishes updated twist used for armcontrol. Also handles the GUI.</li>
+  	  	<br>
+  	  	<li><span style="color: #00ccff">sense_hands</span> - reads serial distance sensor data sent by Arduino and publishes it to a topic.</li>
+  	  </ul>
+  	  <br>
+  	  The launch file also has configurable parameters for ball speed and paddle size.
+  	  <br><br>
+  	  Please see <a href="https://github.com/victorozoh/ME495_Embedded_Systems_Final_Project" style="color: #00ccff" target="_blank">project repository</a> for details and documentation.
+  	</div>
+
   </body>
 </html>
