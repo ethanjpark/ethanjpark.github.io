@@ -27,32 +27,46 @@ body {
 }
 
 .header {
-	margin: 50px auto auto 796px;
-	width: 320px;
+	margin: 50px auto auto 764px;
+	width: 366px;
 	font-size: 48px;
 	/*background-color: #000000;*/
 }
 
 .quarter {
-	margin: 15px auto auto auto;
-	width: 126px;
+	margin: 15px auto auto 91px;
+	width: 184px;
 	font-size: 24px;
 	/*background-color: #000000;*/
 }
 
-.video {
-	margin: 50px auto auto 473px;
+.first {
+	width: 1594px;
+	height: 400px;
+	margin: 75px auto auto 150px;
 }
 
-.group {
-	margin: 50px auto auto auto;
-	font-size: 18px;
-	width: 942px;
-	/*background-color: #000000;*/
+.car {
+	width: 600px;
+	border: solid 3px #00ccff;
 }
 
-.text {
-	margin: 50px 12% auto 12%;
+.text1 {
+	width: 900px;
+	margin-top: 50px;
+	float: right;
 	font-size: 18px;
 	line-height: 30px;
+}
+
+.sensors {
+	width: 600px;
+	margin-top: 75px;
+	margin-left: 200px;
+	border: solid 3px #00ccff;
+}
+
+.video1 {
+	margin-right: 200px;
+	float: right;
 }
