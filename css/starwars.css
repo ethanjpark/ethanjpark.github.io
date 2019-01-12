@@ -27,15 +27,15 @@ body {
 }
 
 .header {
-	margin: 50px auto auto 764px;
-	width: 366px;
+	margin: 50px auto auto 748px;
+	width: 398px;
 	font-size: 48px;
 	/*background-color: #000000;*/
 }
 
 .quarter {
-	margin: 15px auto auto 91px;
-	width: 184px;
+	margin: 15px auto auto 117px;
+	width: 164px;
 	font-size: 24px;
 	/*background-color: #000000;*/
 }
@@ -46,7 +46,7 @@ body {
 	margin: 75px auto auto 150px;
 }
 
-.car {
+.gameplay {
 	width: 600px;
 	border: solid 3px #00ccff;
 }
@@ -59,15 +59,18 @@ body {
 	line-height: 30px;
 }
 
-.sensors {
-	width: 500px;
-	margin-top: 75px;
-	margin-left: 220px;
+.second {
+	margin-top: 100px;
+}
+
+.gameplay2 {
+	width: 600px;
+	margin-left: 100px;
 	border: solid 3px #00ccff;
 }
 
-.video1 {
-	margin-right: 250px;
-	margin-top: 15px;
-	float: right;
+.upgrades {
+	width: 600px;
+	margin-left: 250px;
+	border: solid 3px #00ccff;
 }

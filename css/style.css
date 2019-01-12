@@ -5,7 +5,7 @@ body {
 	font-size: 24px;
 	letter-spacing: 3px;
 	color: white;
-	padding-bottom: 750px;
+	padding-bottom: 250px;
 }
 
 .heading {
@@ -58,9 +58,11 @@ body {
 }
 
 .proj {
-	margin: 150px auto auto auto;
-	width: 6.5%;
+	margin: 150px auto auto 869px;
+	width: 156px;
 	font-size: 36px;
+	color: #00ccff;
+	/*background-color: #000000;*/
 }
 
 .pong {
@@ -154,4 +156,53 @@ body {
 
 .rccar:hover .rccarthumbtext {
   opacity: 1;
+}
+
+.starwars {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	margin-top: 425px;
+	margin-left: -500px;
+}
+
+.swthumb {
+  display: block;
+  width: 300px;
+  border-radius: 20%;
+}
+
+.swthumbtext {
+	position: absolute;
+	top: 40%;
+	left: 4%;
+	color: white;
+	font-size: 32px;
+	opacity: 0;
+}
+
+.starwars:hover .swthumb {
+  opacity: 0.3;
+}
+
+.starwars:hover .swthumbtext {
+  opacity: 1;
+}
+
+.aboutme {
+	margin: 875px auto auto 842px;
+	width: 190px;
+	font-size: 36px;
+	color: #00ccff;
+	/*background-color: #000000;*/
+}
+
+.abouttext {
+	font-size: 18px;
+	width: 1200px;
+	margin-top: 50px;
+	margin-left: -490px;
+	color: #ffffff;
+	line-height: 30px;
+	/*background-color: #000000;*/
 }
