@@ -65,12 +65,45 @@ body {
 	/*background-color: #000000;*/
 }
 
-.pong {
+.uuvsim {
 	position: absolute;
 	width: 300px;
 	height: 300px;
 	margin-top: 50px;
 	margin-left: -500px;
+}
+
+.uuvsimthumb {
+  display: block;
+  width: 300px;
+  border-radius: 20%;
+}
+
+.uuvsimthumbtext {
+	position: absolute;
+	top: 35%;
+	left: 12%;
+	color: white;
+	font-size: 24px;
+	opacity: 0;
+	width: 236px;
+	/*background-color: #000000;*/
+}
+
+.uuvsim:hover .uuvsimthumb {
+  opacity: 0.3;
+}
+
+.uuvsim:hover .uuvsimthumbtext {
+  opacity: 1;
+}
+
+.pong {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	margin-top: 50px;
+	margin-left: -75px;
 }
 
 .pongthumb {
@@ -101,7 +134,7 @@ body {
 	width: 300px;
 	height: 300px;
 	margin-top: 50px;
-	margin-left: -75px;
+	margin-left: 350px;
 }
 
 .tankthumb {
@@ -131,8 +164,8 @@ body {
 	position: absolute;
 	width: 300px;
 	height: 300px;
-	margin-top: 50px;
-	margin-left: 350px;
+	margin-top: 425px;
+	margin-left: -500px;
 }
 
 .rccarthumb {
@@ -163,7 +196,7 @@ body {
 	width: 300px;
 	height: 300px;
 	margin-top: 425px;
-	margin-left: -500px;
+	margin-left: -75px;
 }
 
 .swthumb {
