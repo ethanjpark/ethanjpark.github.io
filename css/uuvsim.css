@@ -27,14 +27,14 @@ body {
 }
 
 .header {
-	margin: 50px auto auto 532px;
-	width: 830px;
+	margin: 50px auto auto 557px;
+	width: 780px;
 	font-size: 48px;
 	/*background-color: #000000;*/
 }
 
 .quarter {
-	margin: 15px auto auto 333px;
+	margin: 15px auto auto 308px;
 	width: 164px;
 	font-size: 24px;
 	/*background-color: #000000;*/
@@ -44,6 +44,25 @@ body {
 	width: 1594px;
 	height: 400px;
 	margin: 75px auto auto 150px;
+	font-size: 18px;
+	line-height: 30px;
+}
+
+.second {
+	width: 1594px;
+	margin: 0px auto auto 150px;
+	font-size: 18px;
+	line-height: 30px;
+}
+
+.waypoints {
+	width: 700px;
+	border: solid 3px #00ccff;
+}
+
+.text2 {
+	width: 800px;
+	float: right;
 	font-size: 18px;
 	line-height: 30px;
 }
