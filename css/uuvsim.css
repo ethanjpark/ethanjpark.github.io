@@ -66,5 +66,16 @@ body {
 }
 
 .text2 {
-	margin: 50px auto auto auto;
+	margin: 50px auto 50px auto;
+}
+
+.vertplume {
+	width: 700px;
+	border: solid 3px #00ccff;
+}
+
+.elapplume {
+	width: 700px;
+	border: solid 3px #00ccff;
+	float: right;
 }
