@@ -42,17 +42,23 @@ body {
 
 .first {
 	width: 1594px;
-	height: 350px;
+	height: 435px;
 	margin: 75px auto auto 150px;
 	font-size: 18px;
 	line-height: 30px;
+	/*background-color: #000000;*/
+}
+
+.video {
+	margin: auto auto 50px 473px;
 }
 
 .second {
 	width: 1594px;
-	margin: 0px auto auto 150px;
+	margin: 100px auto auto 150px;
 	font-size: 18px;
 	line-height: 30px;
+	/*background-color: #000000;*/
 }
 
 .third {
