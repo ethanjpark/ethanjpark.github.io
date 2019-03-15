@@ -18,35 +18,56 @@
       This is my MSR winter quarter project. I used the plume simulation feature in the <a href="https://github.com/uuvsimulator/uuv_simulator" style="color: #00ccff" target="_blank">UUV Simulator</a> to implement a plume detection and tracing algorithm. UUV Simulator was developed by <a href="https://github.com/musamarcusso" style="color: #00ccff" target="_blank">Musa Morena Marcusso Manhaes</a> in the scope of the EU ECSEL project 662107 SWARMS for unmanned underwater vehicle simulation based on Gazebo and ROS. It supports custom underwater robot models, thruster managers, and seabed models, as well as utilizing underwater dynamics and plume disperson models from academic papers and established works. Since when it began development in 2016 it seems to have gained significant traction in the maritime ROS and robotics community, especially in Europe. It was a topic of discussion at underwater ROS workshops such as <a href="https://discourse.ros.org/t/bts-2018-workshop-adoption-of-conventions-in-the-underwater-ros-community/5389" style="color: #00ccff" target="_blank">BTS 2018</a> and an underwater ROS workshop <a href="https://discourse.ros.org/t/underwater-ros-workshop-woods-hole-oceanographic-institution/5197" style="color: #00ccff" target="_blank">at Woods Hole Oceanographic Institution</a>.
       <br><br>
       With this project I aimed to familiarize myself with a potentially useful tool for future work and study in the field of underwater robots. Furthermore, I hoped to learn about the unique challenges that face robots in underwater environments through implementation of plume detection and tracing, a very common application of underwater robots in both commercial and scientific uses.
-      <br><br>
-      Demo video of the plume tracing in action is embedded below. Since the simulation is not very fast, the video has been sped up. The white spherical marker that appears near the robot at the end of the demo is where the robot thinks the source is.
     </div>
-
-    <div class="video">
-      <iframe width="960" height="540"
-      src="https://youtube.com/embed/SYhh60iHcdc"
-      style="border:3px solid #00ccff;">
-      </iframe>
-    </div>
-
     <div class="second">
-      <img src="../links/waypoint_following.png" class="waypoints">
+      <img src="../links/waypoint_following.png" class="waypoints"/>
       <div class="text1">
-        One large concern that I had had before going in was the simulator's compatibility with ROS Melodic, as all documentation and discussion seemed to assume use with Kinetic. If the simulator didn't work with Melodic, this could have potentially derailed the entire project. Fortunately, this did not come to pass and there were no issues stemming from ROS itself.
-        <br><br>
-        However, I did find that the simulator assumed the installation of a few packages and libraries that my ROS environment did not have. These were: <a href="https://wiki.ros.org/message_to_tf" style="color: #00ccff" target="_blank">message_to_tf</a>, <a href="https://wiki.ros.org/geographic_msgs" style="color: #00ccff" target="_blank">geographic_msgs</a>, <a href="https://geographiclib.sourceforge.io" style="color: #00ccff" target="_blank">GeographicLib</a>. Judging by how commonly these packages seem to be depended on by other ROS projects, assuming that a user for this simulator would likely already have these packages is fairly reasonable.
+        To individually test and familiarize myself with the components that I would need for the final plume tracing portion of my project, I used the documentation and tutorials provided online and in the packages. Shown to the left is the RViz simulation of one of the tutorials, moving the robot with the default PID controller by passing it a list of positional waypoints. Moving the robot is also possible by passing in a waypoint through a service call, which is what I used in my final implementation.
       </div>
       <div class="text2">
-        To individually test and familiarize myself with the components that I would need for the final plume tracing portion of my project, I used the documentation and tutorials provided online and in the packages. Shown above is the RViz simulation of one of the tutorials, moving the robot with the default PID controller by passing it a list of positional waypoints. Moving the robot is also possible by passing in waypoints through a service call, which is what I used in my final implementation.
-        <br><br>
         At this point I should mention that all the simulation for this project took place in RViz; the visualization for plume simulation is currently <a href="https://github.com/uuvsimulator/uuv_plume_simulator/issues/15#issuecomment-405820810" style="color: #00ccff" target="_blank">unavailable on Gazebo</a>. User-controllable options for the plume included: location of the source, plume visualization boundary, and velocity of the current (limited to horizontal manipulation). Simulated particles naturally rise due to buoyancy modelled within the simulator. Shown below is a plume with no current and a 'normal' plume. The colors represent time from creation - particles are continuously created at source. 
       </div>
-      <img src="../links/vertical_plume.png" class="vertplume">
-      <img src="../links/plume_elapsed.png" class="elapplume">
+      <img src="../links/vertical_plume.png" class="vertplume"/>
+      <img src="../links/plume_elapsed.png" class="elapplume"/>
     </div>
 
     <div class="third">
+      <div class="text3">
+        The methodology for plume tracing came from <a href="https://ieeexplore.ieee.org/document/1522521" style="color: #00ccff" target="_blank">"Chemical plume tracing via an autonomous underwater vehicle"</a> by Farrell, Pang, and Li. The method centralizes on the idea of behavior-based planning, drawing inspiration from animal intelligence in nature. It also assumes that the AUV involved knows its position and current flow velocity, and can sense chemical concentrations in the vicinity. Lastly, the planning method assumes a two-dimensional plume. A diagram of the behaviors and their relationships with each other from the aforementioned paper is shown below.
+      </div>
+      <div class="text4">
+        <b><font size="5">Behaviors:</font></b>
+        <br>
+        <ul>
+          <li><span style="color: #00ccff">GoTo</span> - robot moves to starting location</li>
+          <br>
+          <li><span style="color: #00ccff">Find</span> - robot 'wanders' in search of plume</li>
+          <br>
+          <li><span style="color: #00ccff">Track-In</span> - robot is in plume, travels upflow towards source</li>
+          <br>
+          <li><span style="color: #00ccff">Track-Out</span> - robot has lost plume, try to backtrack</li>
+          <br>
+          <li><span style="color: #00ccff">Source-Declare</span> - robot tries to determine plume source</li>
+          <br>
+          <li><span style="color: #00ccff">Reacquire</span> - robot tries a larger backtracking motion</li>
+        </ul>
+      </div>
+      <img src="../links/bbp.png" class="bbp"/>
+      <figcaption class="bbpcaption">
+        J. A. Farrell, S. Pang, W. Li, "Chemical plume tracing via an autonomous underwater vehicle", IEEE Journal Of Oceanic Engineering, vol. 30, no. 2, pp. 428-442, April 2005.
+      </figcaption>
+      <div class="text5">
+        To briefly summarize the planning, the AUV will traverse the operational area until it finds the plume. The robot then zigzags up the plume, backtracking as necessary when it loses contact with the plume, until it can determine a source based on a stored list of contact positions. The demo video of the plume tracing in action is embedded below. Since the simulation is not very fast, the video has been sped up. The white spherical marker that appears near the robot at the end of the demo is where the robot thinks the plume source is.
+      </div>
     </div>
-
+    <div class="video">
+        <iframe width="960" height="540"
+        src="https://youtube.com/embed/SYhh60iHcdc"
+        style="border:3px solid #00ccff;">
+        </iframe>
+    </div>
+    <div class="text6">
+      Please refer to the <a href="https://github.com/ethanjpark/Plume_Tracing_UUV_Sim" style="color: #00ccff" target="_blank">project repository</a> for details.
+    </div>
   </body>
 </html>
