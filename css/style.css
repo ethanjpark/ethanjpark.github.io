@@ -13,7 +13,7 @@ body {
 	width: 35%;
 }
 
-.fsgp {
+.photo {
 	width: 200px;
 	border-radius: 50%;
 }
@@ -65,12 +65,45 @@ body {
 	/*background-color: #000000;*/
 }
 
-.uuvsim {
+.mbari {
 	position: absolute;
 	width: 300px;
 	height: 300px;
 	margin-top: 50px;
 	margin-left: -500px;
+}
+
+.mbarithumb {
+  display: block;
+  width: 300px;
+  border-radius: 20%;
+}
+
+.mbarithumbtext {
+	position: absolute;
+	top: 40%;
+	left: 12%;
+	color: orange;
+	font-size: 24px;
+	opacity: 0;
+	width: 236px;
+	/*background-color: #000000;*/
+}
+
+.mbari:hover .mbarithumb {
+  opacity: 0.3;
+}
+
+.mbari:hover .mbarithumbtext {
+  opacity: 1;
+}
+
+.uuvsim {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	margin-top: 50px;
+	margin-left: -75px;
 }
 
 .uuvsimthumb {
@@ -103,7 +136,7 @@ body {
 	width: 300px;
 	height: 300px;
 	margin-top: 50px;
-	margin-left: -75px;
+	margin-left: 350px;
 }
 
 .pongthumb {
@@ -133,8 +166,8 @@ body {
 	position: absolute;
 	width: 300px;
 	height: 300px;
-	margin-top: 50px;
-	margin-left: 350px;
+	margin-top: 425px;
+	margin-left: -500px;
 }
 
 .tankthumb {
@@ -165,7 +198,7 @@ body {
 	width: 300px;
 	height: 300px;
 	margin-top: 425px;
-	margin-left: -500px;
+	margin-left: -75px;
 }
 
 .rccarthumb {
@@ -196,7 +229,7 @@ body {
 	width: 300px;
 	height: 300px;
 	margin-top: 425px;
-	margin-left: -75px;
+	margin-left: 350px;
 }
 
 .swthumb {
