@@ -1,16 +1,16 @@
 body {
-    background-color: rgba(50,50,50);
+	background-color: #404040;
     width: 1894px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto Slab';
 	font-size: 24px;
 	letter-spacing: 3px;
 	color: white;
-	padding-bottom: 250px;
+	padding-bottom: 100px;
 }
 
 .heading {
 	margin: 75px auto auto auto;
-	width: 35%;
+	width: 690px;
 }
 
 .photo {
@@ -31,6 +31,7 @@ body {
 	color: white;
 	padding: 10px 32px;
 	text-align: center;
+	font-family: 'Roboto Slab';
 	font-size: 24px;
 	border-radius: 10px;
 	transition-duration: 0.2s;
@@ -48,6 +49,7 @@ body {
 	color: white;
 	padding: 10px 32px;
 	text-align: center;
+	font-family: 'Roboto Slab';
 	font-size: 24px;
 	border-radius: 10px;
 	transition-duration: 0.2s;
@@ -57,11 +59,19 @@ body {
 	background-color: #005580;
 }
 
+.bg1 {
+	margin-top: 50px;
+	margin-left: -6px;
+	width: 1900px;
+	height: 1000px;
+	background-color: #ccf5ff;
+}
+
 .proj {
-	margin: 150px auto auto 869px;
-	width: 156px;
-	font-size: 36px;
-	color: #00ccff;
+	margin: 0px auto auto 809px;
+	width: 275px;
+	font-size: 64px;
+	color: #404040;
 	/*background-color: #000000;*/
 }
 
@@ -70,7 +80,7 @@ body {
 	width: 300px;
 	height: 300px;
 	margin-top: 50px;
-	margin-left: -500px;
+	margin-left: -440px;
 }
 
 .mbarithumb {
@@ -81,17 +91,18 @@ body {
 
 .mbarithumbtext {
 	position: absolute;
-	top: 40%;
-	left: 12%;
-	color: orange;
+	top: 27%;
+	left: 10px;
+	color: black;
 	font-size: 24px;
 	opacity: 0;
-	width: 236px;
+	width: 280px;
+	text-align: center;
 	/*background-color: #000000;*/
 }
 
 .mbari:hover .mbarithumb {
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .mbari:hover .mbarithumbtext {
@@ -103,7 +114,7 @@ body {
 	width: 300px;
 	height: 300px;
 	margin-top: 50px;
-	margin-left: -75px;
+	margin-left: -15px;
 }
 
 .uuvsimthumb {
@@ -114,12 +125,13 @@ body {
 
 .uuvsimthumbtext {
 	position: absolute;
-	top: 40%;
-	left: 12%;
+	top: 27%;
+	left: 32px;
 	color: white;
 	font-size: 24px;
 	opacity: 0;
 	width: 236px;
+	text-align: center;
 	/*background-color: #000000;*/
 }
 
@@ -136,7 +148,7 @@ body {
 	width: 300px;
 	height: 300px;
 	margin-top: 50px;
-	margin-left: 350px;
+	margin-left: 410px;
 }
 
 .pongthumb {
@@ -167,7 +179,7 @@ body {
 	width: 300px;
 	height: 300px;
 	margin-top: 425px;
-	margin-left: -500px;
+	margin-left: -440px;
 }
 
 .tankthumb {
@@ -198,7 +210,7 @@ body {
 	width: 300px;
 	height: 300px;
 	margin-top: 425px;
-	margin-left: -75px;
+	margin-left: -15px;
 }
 
 .rccarthumb {
@@ -229,7 +241,7 @@ body {
 	width: 300px;
 	height: 300px;
 	margin-top: 425px;
-	margin-left: 350px;
+	margin-left: 410px;
 }
 
 .swthumb {
@@ -242,13 +254,13 @@ body {
 	position: absolute;
 	top: 40%;
 	left: 4%;
-	color: white;
+	color: black;
 	font-size: 32px;
 	opacity: 0;
 }
 
 .starwars:hover .swthumb {
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .starwars:hover .swthumbtext {
@@ -256,7 +268,7 @@ body {
 }
 
 .aboutme {
-	margin: 875px auto auto 842px;
+	margin: 0px auto auto 852px;
 	width: 190px;
 	font-size: 36px;
 	color: #00ccff;
@@ -265,9 +277,9 @@ body {
 
 .abouttext {
 	font-size: 18px;
-	width: 1200px;
+	width: 1000px;
 	margin-top: 50px;
-	margin-left: -490px;
+	margin-left: -405px;
 	color: #ffffff;
 	line-height: 30px;
 	/*background-color: #000000;*/

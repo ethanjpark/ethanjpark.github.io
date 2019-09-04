@@ -1,7 +1,7 @@
 body {
     background-color: rgba(50,50,50);
     width: 1894px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto Slab';
 	letter-spacing: 3px;
 	color: white;
 	padding-bottom: 100px;
@@ -20,6 +20,7 @@ body {
 	border-radius: 10px;
 	transition-duration: 0.2s;
 	border: 3px solid #00ccff;
+	font-family: 'Roboto Slab';
 }
 
 .home:hover {
@@ -27,15 +28,15 @@ body {
 }
 
 .header {
-	margin: 50px auto auto 557px;
-	width: 780px;
+	margin: 50px auto auto 527px;
+	width: 840px;
 	font-size: 48px;
 	/*background-color: #000000;*/
 }
 
 .quarter {
-	margin: 15px auto auto 308px;
-	width: 164px;
+	margin: 15px auto auto 335px;
+	width: 170px;
 	font-size: 24px;
 	/*background-color: #000000;*/
 }

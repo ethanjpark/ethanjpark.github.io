@@ -2,8 +2,9 @@
 <html>
   <head>
     <title>Ethan Park</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
     <link rel="stylesheet" href="../css/uuvsim.css">
-    <link rel="icon" type="image/png" href="../links/favicon.png">
+    <link rel="icon" type="image/png" href="../links/index/favicon.png">
   </head>
   <body>
     <button onclick="window.location.href = 'https://ethanjpark.github.io';" class="home">Home</button>
@@ -20,15 +21,15 @@
       With this project I aimed to familiarize myself with a potentially useful tool for future work and study in the field of underwater robots. Furthermore, I hoped to learn about the unique challenges that face robots in underwater environments through implementation of plume detection and tracing, a very common application of underwater robots in both commercial and scientific uses.
     </div>
     <div class="second">
-      <img src="../links/waypoint_following.png" class="waypoints"/>
+      <img src="../links/uuvsim/waypoint_following.png" class="waypoints"/>
       <div class="text1">
         To individually test and familiarize myself with the components that I would need for the final plume tracing portion of my project, I used the documentation and tutorials provided online and in the packages. Shown to the left is the RViz simulation of one of the tutorials, moving the robot with the default PID controller by passing it a list of positional waypoints. Moving the robot is also possible by passing in a waypoint through a service call, which is what I used in my final implementation.
       </div>
       <div class="text2">
         At this point I should mention that all the simulation for this project took place in RViz; the visualization for plume simulation is currently <a href="https://github.com/uuvsimulator/uuv_plume_simulator/issues/15#issuecomment-405820810" style="color: #00ccff" target="_blank">unavailable on Gazebo</a>. User-controllable options for the plume included: location of the source, plume visualization boundary, and velocity of the current (limited to horizontal manipulation). Simulated particles naturally rise due to buoyancy modelled within the simulator. Shown below is a plume with no current and a 'normal' plume. The colors represent time from creation - particles are continuously created at source. 
       </div>
-      <img src="../links/vertical_plume.png" class="vertplume"/>
-      <img src="../links/plume_elapsed.png" class="elapplume"/>
+      <img src="../links/uuvsim/vertical_plume.png" class="vertplume"/>
+      <img src="../links/uuvsim/plume_elapsed.png" class="elapplume"/>
     </div>
 
     <div class="third">
@@ -52,7 +53,7 @@
           <li><span style="color: #00ccff">Reacquire</span> - robot tries a larger backtracking motion</li>
         </ul>
       </div>
-      <img src="../links/bbp.png" class="bbp"/>
+      <img src="../links/uuvsim/bbp.png" class="bbp"/>
       <figcaption class="bbpcaption">
         J. A. Farrell, S. Pang, W. Li, "Chemical plume tracing via an autonomous underwater vehicle", IEEE Journal Of Oceanic Engineering, vol. 30, no. 2, pp. 428-442, April 2005.
       </figcaption>
