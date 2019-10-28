@@ -174,12 +174,44 @@ body {
   opacity: 1;
 }
 
-.tank {
+.enigma {
 	position: absolute;
 	width: 300px;
 	height: 300px;
 	margin-top: 425px;
 	margin-left: -440px;
+}
+
+.enigmathumb {
+  display: block;
+  width: 300px;
+  border-radius: 20%;
+}
+
+.enigmathumbtext {
+	position: absolute;
+	top: 35%;
+	left: 0%;
+	color: black;
+	font-size: 32px;
+	text-align: center;
+	opacity: 0;
+}
+
+.enigma:hover .enigmathumb {
+  opacity: 0.3;
+}
+
+.enigma:hover .enigmathumbtext {
+  opacity: 1;
+}
+
+.tank {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	margin-top: 425px;
+	margin-left: -15px;
 }
 
 .tankthumb {
@@ -202,37 +234,6 @@ body {
 }
 
 .tank:hover .tankthumbtext {
-  opacity: 1;
-}
-
-.rccar {
-	position: absolute;
-	width: 300px;
-	height: 300px;
-	margin-top: 425px;
-	margin-left: -15px;
-}
-
-.rccarthumb {
-  display: block;
-  width: 300px;
-  border-radius: 20%;
-}
-
-.rccarthumbtext {
-	position: absolute;
-	top: 40%;
-	left: 19%;
-	color: white;
-	font-size: 32px;
-	opacity: 0;
-}
-
-.rccar:hover .rccarthumb {
-  opacity: 0.3;
-}
-
-.rccar:hover .rccarthumbtext {
   opacity: 1;
 }
 
@@ -268,8 +269,8 @@ body {
 }
 
 .aboutme {
-	margin: 0px auto auto 852px;
-	width: 190px;
+	margin: 0px auto auto 842px;
+	width: 210px;
 	font-size: 36px;
 	color: #00ccff;
 	/*background-color: #000000;*/
