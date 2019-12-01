@@ -1,0 +1,128 @@
+body {
+    background-color: rgba(50,50,50);
+    width: 1894px;
+    font-family: 'Roboto Slab';
+	letter-spacing: 3px;
+	color: white;
+	padding-bottom: 100px;
+}
+
+.home {
+	position: sticky;
+	top: 20px;
+	margin-left: 15px;
+	background-color: #00ccff;
+	border: none;
+	color: white;
+	padding: 10px 32px;
+	text-align: center;
+	font-size: 24px;
+	border-radius: 10px;
+	transition-duration: 0.2s;
+	border: 3px solid #00ccff;
+	font-family: 'Roboto Slab';
+}
+
+.home:hover {
+	background-color: #005580;
+}
+
+.header {
+	margin: 50px auto auto 562px;
+	width: 770px;
+	font-size: 48px;
+	/*background-color: #000000;*/
+}
+
+.quarter {
+	margin: 15px auto auto 268px;
+	width: 235px;
+	font-size: 24px;
+	/*background-color: #000000;*/
+}
+
+.first {
+	width: 1594px;
+	height: 500px;
+	margin: 75px auto auto 150px;
+	font-size: 18px;
+	line-height: 30px;
+	/*background-color: #000000;*/
+}
+
+.second {
+	width: 1594px;
+	margin: auto auto auto 150px;
+	font-size: 18px;
+	line-height: 30px;
+	/*background-color: #000000;*/
+}
+
+.third {
+	width: 1594px;
+	margin: 0px auto auto 150px;
+	font-size: 18px;
+	line-height: 30px;
+}
+
+.bluerov2_pic {
+	width: 500px;
+	border: solid 3px #00ccff;
+}
+
+.text1 {
+	margin-top: 25px;
+	width: 1000px;
+	float: right;
+}
+
+.text2 {
+	margin: 40px auto 50px auto;
+}
+
+.stack {
+	width: 700px;
+	border: solid 3px #00ccff;
+}
+
+.hardware {
+	width: 700px;
+	border: solid 3px #00ccff;
+	float: right;
+}
+
+.text3 {
+	margin: 40px auto auto auto;
+}
+
+.bbp {
+	border: solid 3px #00ccff;
+	margin-top: 45px;
+}
+
+.bbpcaption {
+	font-size: 10px;
+	line-height: 10px;
+	width: 537px;
+}
+
+.text4 {
+	width: 900px;
+	float: right;
+	margin-top: 50px;
+}
+
+.text5 {
+	margin-top: 50px;
+}
+
+.video {
+	margin: 50px auto 50px 473px;
+}
+
+.text6 {
+	width: 1594px;
+	margin: auto auto auto 150px;
+	font-size: 18px;
+	line-height: 30px;
+}

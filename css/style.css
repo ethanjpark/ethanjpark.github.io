@@ -75,12 +75,46 @@ body {
 	/*background-color: #000000;*/
 }
 
-.mbari {
+.bluerov {
 	position: absolute;
 	width: 300px;
 	height: 300px;
 	margin-top: 50px;
 	margin-left: -440px;
+}
+
+.bluerovthumb {
+  display: block;
+  width: 300px;
+  border-radius: 20%;
+}
+
+.bluerovthumbtext {
+	position: absolute;
+	top: 33%;
+	left: 10px;
+	color: black;
+	font-size: 24px;
+	opacity: 0;
+	width: 280px;
+	text-align: center;
+	/*background-color: #000000;*/
+}
+
+.bluerov:hover .bluerovthumb {
+  opacity: 0.2;
+}
+
+.bluerov:hover .bluerovthumbtext {
+  opacity: 1;
+}
+
+.mbari {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	margin-top: 50px;
+	margin-left: -15px;
 }
 
 .mbarithumb {
@@ -114,7 +148,7 @@ body {
 	width: 300px;
 	height: 300px;
 	margin-top: 50px;
-	margin-left: -15px;
+	margin-left: 410px;
 }
 
 .uuvsimthumb {
@@ -147,8 +181,8 @@ body {
 	position: absolute;
 	width: 300px;
 	height: 300px;
-	margin-top: 50px;
-	margin-left: 410px;
+	margin-top: 425px;
+	margin-left: -440px;
 }
 
 .pongthumb {
@@ -179,7 +213,7 @@ body {
 	width: 300px;
 	height: 300px;
 	margin-top: 425px;
-	margin-left: -440px;
+	margin-left: -15px;
 }
 
 .enigmathumb {
@@ -211,7 +245,7 @@ body {
 	width: 300px;
 	height: 300px;
 	margin-top: 425px;
-	margin-left: -15px;
+	margin-left: 410px;
 }
 
 .tankthumb {
@@ -230,41 +264,10 @@ body {
 }
 
 .tank:hover .tankthumb {
-  opacity: 0.3;
-}
-
-.tank:hover .tankthumbtext {
-  opacity: 1;
-}
-
-.starwars {
-	position: absolute;
-	width: 300px;
-	height: 300px;
-	margin-top: 425px;
-	margin-left: 410px;
-}
-
-.swthumb {
-  display: block;
-  width: 300px;
-  border-radius: 20%;
-}
-
-.swthumbtext {
-	position: absolute;
-	top: 40%;
-	left: 4%;
-	color: black;
-	font-size: 32px;
-	opacity: 0;
-}
-
-.starwars:hover .swthumb {
   opacity: 0.2;
 }
 
-.starwars:hover .swthumbtext {
+.tank:hover .tankthumbtext {
   opacity: 1;
 }
 
