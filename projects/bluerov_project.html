@@ -28,7 +28,7 @@
         Ultimately, we settled on the <a href="https://bluerobotics.com/store/rov/bluerov2/" style="color: #00ccff" target="_blank">BlueRobotics BlueROV2</a> shown on the left, a nice compromise between a kit and a finished, commercial product. Although the robot came unassembled, all of the individual components were already made and tested, meaning that the user only had to put the pieces together, which also only took about seven hours - compared to the double digits required for the aforementioned kits. Much of the hardware, electronics, and software was open source, with anything proprietary being heavily documented online. In addition, all of this was easily accessible and somewhat receptive to further modification (BlueRobotics sells additional sensors and accessories, obviously with instructions on how to integrate them, but anything custom is up to the user.)
       </div>
       <div class="text2">
-        As previously mentioned, the software and electronics on the BlueROV2 is open source. Specifically, the controller software is ArduSub, a derivative of the widespread ArduPilot software used on aerial drones, run on a Pixhawk autopilot board. The Pixhawk is also connected to a Raspberry Pi, which acts as a companion computer, a device that receives vehicle data from the autopilot for further use, usually on some sort of ground control station (GCS) software. This data is then transmitted through the robot's tether to a topside computer, which then displays this data via QGroundControl, a GCS software. The software stack and a generalized hardware flowchart are shown below. 
+        As previously mentioned, the software and electronics on the BlueROV2 is open source. Specifically, the controller software is ArduSub, a derivative of the widespread ArduPilot software used on aerial drones, run on a Pixhawk autopilot board. The Pixhawk is also connected to a Raspberry Pi 3, which acts as a companion computer, a device that receives vehicle data from the autopilot for further use, usually on some sort of ground control station (GCS) software. This data is then transmitted through the robot's tether to a topside computer, which then displays this data via QGroundControl, a GCS software. The software stack and a generalized hardware flowchart are shown below. 
       </div>
       <img src="../links/bluerov/bluerov_software_stack.png" class="stack"/>
       <img src="../links/bluerov/rov_hardware.png" class="hardware"/>
@@ -36,27 +36,22 @@
 
     <div class="third">
       <div class="text3">
-         
+        Despite all that the BlueROV2 offers, as the name suggests it is still a remotely-operated vehicle, meaning that the onus is on us if we want autonomous control of the robot. From pretty early on, we were set on using ROS, for reasons such as  familiarity with not just myself but also Dr. Hartmann's students, and the likelihood of relevant packages created by other BlueROV2 owners - perhaps other researchers. In fact, BlueRobotics themselves had created a ROS package for the BlueROV, the predecessor to the current robot. Unfortunately, they had not seriously updated the package in years. However, one of their engineers had created an unofficial package, <a href="https://github.com/patrickelectric/bluerov_ros_playground" style="color: #00ccff" target="_blank"?>bluerov_ros_playground</a>, for not just control of the robot, but also Gazebo simulation, joystick interaction, and video stream capture with OpenCV.
+        <br><br>
+        I was able to successfully control the robot by publishing integer values to the set_pwm topics as documented in the package. I should note, however, that this was done with the ROS environment on my laptop, which in actual operation of the robot would be the topside computer. With the idea of full autonomy of the BlueROV2, I unsuccesfully tried to run the same package on the Raspberry Pi on the robot. Although I did get a full desktop ROS Kinetic environment up and running on the Pi, compilation from source for the required mavros package caused the Pi to throttle from overheating, for which I was unable to find an adequate cooling solution - worsened by the fact that the Pi on the robot is not detachable. Potential workarounds include cross compiling the packages and replacing the Pi's operating system with an Ubuntu variant for easier dealings with ROS.
       </div>
-      <div class="text4">
-        
+      <!-- <div class="text4">
       </div>
-      <img src="../links/uuvsim/bbp.png" class="bbp"/>
-      <figcaption class="bbpcaption">
-        J. A. Farrell, S. Pang, W. Li, "Chemical plume tracing via an autonomous underwater vehicle", IEEE Journal Of Oceanic Engineering, vol. 30, no. 2, pp. 428-442, April 2005.
-      </figcaption>
       <div class="text5">
-        To briefly summarize the planning, the AUV will traverse the operational area until it finds the plume. The robot then zigzags up the plume, backtracking as necessary when it loses contact with the plume, until it can determine a source based on a stored list of contact positions. The demo video of the plume tracing in action is embedded below. Since the simulation is not very fast, the video has been sped up. The white spherical marker that appears near the robot at the end of the demo is where the robot thinks the plume source is.
-      </div>
+      </div> -->
     </div>
-    <div class="video">
+    <!-- <div class="video">
         <iframe width="960" height="540"
-        src="https://youtube.com/embed/hFxBnqc86v0"
+        src=""
         style="border:3px solid #00ccff;">
         </iframe>
-    </div>
-    <div class="text6">
-      Please refer to the <a href="https://github.com/ethanjpark/Plume_Tracing_UUV_Sim" style="color: #00ccff" target="_blank">project repository</a> for details.
-    </div>
+    </div> -->
+    <!-- <div class="text6">
+    </div> -->
   </body>
 </html>
