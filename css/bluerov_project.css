@@ -28,14 +28,15 @@ body {
 }
 
 .header {
-	margin: 50px auto auto 562px;
-	width: 770px;
+	margin: 50px auto auto 597px;
+	width: 700px;
 	font-size: 48px;
+	text-align: center;
 	/*background-color: #000000;*/
 }
 
 .quarter {
-	margin: 15px auto auto 268px;
+	margin: 15px auto auto 233px;
 	width: 235px;
 	font-size: 24px;
 	/*background-color: #000000;*/
@@ -43,7 +44,7 @@ body {
 
 .first {
 	width: 1594px;
-	height: 500px;
+	height: 300px;
 	margin: 75px auto auto 150px;
 	font-size: 18px;
 	line-height: 30px;
@@ -70,6 +71,12 @@ body {
 	border: solid 3px #00ccff;
 }
 
+.bluerov2_caption {
+	font-size: 12px;
+	line-height: 12px;
+	width: 600px;
+}
+
 .text1 {
 	margin-top: 25px;
 	width: 1000px;
@@ -91,38 +98,21 @@ body {
 	float: right;
 }
 
+.diagram_caption {
+	font-size: 12px;
+	line-height: 12px;
+	width: 800px;
+	margin-top: 20px;
+	text-align: right;
+}
+
 .text3 {
-	margin: 75px auto auto auto;
+	margin: 55px auto auto auto;
 }
 
-.bbp {
+.demo {
+	width: 960px;
+	height: 540px;
+	margin: 50px auto 50px 467px;
 	border: solid 3px #00ccff;
-	margin-top: 45px;
-}
-
-.bbpcaption {
-	font-size: 10px;
-	line-height: 10px;
-	width: 537px;
-}
-
-.text4 {
-	width: 900px;
-	float: right;
-	margin-top: 50px;
-}
-
-.text5 {
-	margin-top: 50px;
-}
-
-.video {
-	margin: 50px auto 50px 473px;
-}
-
-.text6 {
-	width: 1594px;
-	margin: auto auto auto 150px;
-	font-size: 18px;
-	line-height: 30px;
 }

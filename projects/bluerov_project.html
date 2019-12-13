@@ -9,49 +9,48 @@
   <body>
     <button onclick="window.location.href = 'https://ethanjpark.github.io';" class="home">Home</button>
     <div class="header">
-      Feedback Control of BlueROV2<br>
+      Underwater Robot Platform for Feedback Control<br>
       <div class="quarter">
         Spring/Fall 2019
       </div>
     </div>
 
     <div class="first">
-      This is my MSR final project, advised by Dr. Mitra Hartmann, Hannah Emnett, and Kevin Kleczka. The project was driven by a need for an underwater robotic platform for the ongoing research conducted by Dr. Hartmann and her group. The ultimate goal was to have an underwater robot autonomously controlled by sensory feedback.
+      This is my MSR final project, advised by Dr. Mitra Hartmann, Hannah Emnett, and Kevin Kleczka. The project was driven by a need for an underwater robotic platform for the ongoing research conducted by Dr. Hartmann and her group. The goal was to be able to send custom messages/data from the robot to the tethered computer, and the computer be able to control the robot.
       <br><br>
-      Since her group did not have a suitable robot, the first task was to explore commercially available underwater robots and purchase one. One option was educational robot kits from SeaMATE, who offered four kits targeted at different skill/grade levels, ranging from elementary to high school. In a nutshell, these kits would result in a space-frame robot made out of PVC pipes and run by an Arduino. The second option was one of the ubiquitous remote control underwater drones, targeted at boaters, fishermen, and divers. 
-      <br><br>
-      Both of these options came with significant downsides. The kits required a significant time investment for construction and an Arduino was not computationally powerful enough; replacing it meant significant changes to the provided electronics, which meant even more time and effort just to have a satisfactory working robot. The commercial drones were great in that they worked out of the box, however, it was obvious that none were meant to be tampered with. At the very least, opening one up to access the internal electronics could compromise the internal seal from outside water. In addition, most of these drones were controlled via a proprietary controller or mobile app, neither with any sort of API. Therefore, trying to hijack control of the drone from the user end would not be a trivial task, either.
+      Since her group did not have a suitable robot, the first task was to explore commercially available underwater robots and purchase one. I looked into a variety of options, from remote-controlled underwater drones to educational robot kits, each with its advantages and disadvantages. The former would work out of the box, but were not easily modifiable, both in hardware and software. The latter could be 'built' to our needs, but that would also require a lot of time and effort.
     </div>
     <div class="second">
       <img src="../links/bluerov/bluerov2.png" class="bluerov2_pic"/>
       <div class="text1">
         Ultimately, we settled on the <a href="https://bluerobotics.com/store/rov/bluerov2/" style="color: #00ccff" target="_blank">BlueRobotics BlueROV2</a> shown on the left, a nice compromise between a kit and a finished, commercial product. Although the robot came unassembled, all of the individual components were already made and tested, meaning that the user only had to put the pieces together, which also only took about seven hours - compared to the double digits required for the aforementioned kits. Much of the hardware, electronics, and software was open source, with anything proprietary being heavily documented online. In addition, all of this was easily accessible and somewhat receptive to further modification (BlueRobotics sells additional sensors and accessories, obviously with instructions on how to integrate them, but anything custom is up to the user.)
       </div>
+      <figcaption class="bluerov2_caption">
+          Image from BlueRobotics
+      </figcaption>
       <div class="text2">
-        As previously mentioned, the software and electronics on the BlueROV2 is open source. Specifically, the controller software is ArduSub, a derivative of the widespread ArduPilot software used on aerial drones, run on a Pixhawk autopilot board. The Pixhawk is also connected to a Raspberry Pi 3, which acts as a companion computer, a device that receives vehicle data from the autopilot for further use, usually on some sort of ground control station (GCS) software. This data is then transmitted through the robot's tether to a topside computer, which then displays this data via QGroundControl, a GCS software. The software stack and a generalized hardware flowchart are shown below. 
+        As previously mentioned, the software and electronics on the BlueROV2 is open source. Specifically, the autopilot software is ArduSub, a derivative of the widespread ArduPilot software used on aerial drones, run on a Pixhawk autopilot board. The Pixhawk is also connected to a Raspberry Pi 3, which acts as a companion computer, a device that receives vehicle data from the autopilot for further use, usually on some sort of ground control station (GCS) software. This data is then transmitted through the robot's tether to a topside computer, which then displays this data via QGroundControl, a GCS software. The software stack and a generalized hardware flowchart are shown below. 
       </div>
       <img src="../links/bluerov/bluerov_software_stack.png" class="stack"/>
       <img src="../links/bluerov/rov_hardware.png" class="hardware"/>
+      <figcaption class="diagram_caption">
+          Software and Hardware diagram from ArduSub documentation
+      </figcaption>
     </div>
 
     <div class="third">
       <div class="text3">
-        Despite all that the BlueROV2 offers, as the name suggests it is still a remotely-operated vehicle, meaning that the onus is on us if we want autonomous control of the robot. From pretty early on, we were set on using ROS, for reasons such as  familiarity with not just myself but also Dr. Hartmann's students, and the likelihood of relevant packages created by other BlueROV2 owners - perhaps other researchers. In fact, BlueRobotics themselves had created a ROS package for the BlueROV, the predecessor to the current robot. Unfortunately, they had not seriously updated the package in years. However, one of their engineers had created an unofficial package, <a href="https://github.com/patrickelectric/bluerov_ros_playground" style="color: #00ccff" target="_blank"?>bluerov_ros_playground</a>, for not just control of the robot, but also Gazebo simulation, joystick interaction, and video stream capture with OpenCV.
+        To send custom messages (such as data from custom sensors wired to the Pi) from the Pi to the tethered computer, I wrote two python scripts, one running on the Pi and the other on the topside computer. Intially, I tried to use the mavlink protocol over UDP, which is how the robot streams telemetry to QGroundControl. However messaging with mavlink only worked on the same port as QGroundControl, which meant that the scripts were also picking up on all the other telemetry data, which was very unnecessary for the scope of this functionality. Therefore, I switched to using python's built-in socket module, which used TCP, and this worked flawlessly. Oddly enough, the socket implementation only worked if the Pi ran as the server and the topside computer as the client.
         <br><br>
-        I was able to successfully control the robot by publishing integer values to the set_pwm topics as documented in the package. I should note, however, that this was done with the ROS environment on my laptop, which in actual operation of the robot would be the topside computer. With the idea of full autonomy of the BlueROV2, I unsuccesfully tried to run the same package on the Raspberry Pi on the robot. Although I did get a full desktop ROS Kinetic environment up and running on the Pi, compilation from source for the required mavros package caused the Pi to throttle from overheating, for which I was unable to find an adequate cooling solution - worsened by the fact that the Pi on the robot is not detachable. Potential workarounds include cross compiling the packages and replacing the Pi's operating system with an Ubuntu variant for easier dealings with ROS.
+        For controlling the robot with commands from the topside computer, I used <a href="https://github.com/patrickelectric/bluerov_ros_playground" style="color: #00ccff" target="_blank"?>bluerov_ros_playground</a>, an unofficial ROS package created by one of BlueRobotics' own engineers. From pretty early on, we were set on using ROS; Dr. Hartmann's students and I were all familiar with it and there was a good chance that other BlueROV2 owners - perhaps other researchers - had made their own packages for the robot. In fact, BlueRobotics had created an official ROS package for the BlueROV, the predecessor to the current robot. Unfortunately, they had not seriously updated the package in years. 
+        <br><br>
+        With this package, I was able to successfully control the robot by publishing UInt16 values to the set_pwm topics for the various rc channels. Each of these channels were responsible for a different motion for the robot, i.e. rc_channel2 for roll, rc_channel5 for forward/backward, and rc_channel6 for later side-to-side motion. What this is essentially doing is mimicking the values that the autopilot would otherwise receive from joysticks on a physical controller, with each rc_channel representing an axis on the joysticks. The gif below demonstrates the robot moving in rectangular path, implemented as a series of publishes to topics run via rosnode.
       </div>
-      <!-- <div class="text4">
-      </div>
-      <div class="text5">
-      </div> -->
     </div>
-    <!-- <div class="video">
-        <iframe width="960" height="540"
-        src=""
-        style="border:3px solid #00ccff;">
-        </iframe>
-    </div> -->
-    <!-- <div class="text6">
-    </div> -->
+    <div class="demo">
+        <video width="960" height="540" controls>
+          <source src="../links/bluerov/demo.mp4" type="video/mp4">
+        </video>
+    </div> 
   </body>
 </html>
